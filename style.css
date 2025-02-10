@@ -5,11 +5,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     background-image: linear-gradient(to right, red, yellow);
 }
 
-/* Main Container */
+/* Expense Tracker Container */
 .expense-tracker {
     background-image: linear-gradient(pink, blue, pink, purple, rgb(20, 223, 57));
     border-radius: 8px;
@@ -19,7 +19,7 @@ body {
     max-width: 400px;
 }
 
-/* Headings */
+/* Heading */
 h1 {
     text-align: center;
     color: #0c0707;
@@ -37,14 +37,16 @@ label {
     color: #0d0101;
 }
 
-input[type="text"], input[type="number"], input[type="date"] {
+input[type="text"], 
+input[type="number"], 
+input[type="date"] {
     width: calc(100% - 10px);
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-/* Button Styling */
+/* Buttons */
 button.add-expense-btn {
     width: 100%;
     padding: 10px;
@@ -92,7 +94,7 @@ th {
     background-color: #a71d2a;
 }
 
-/* Total Section */
+/* Total Amount */
 .total {
     text-align: center;
     margin-top: 15px;
@@ -101,40 +103,60 @@ th {
     color: #0a0202;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
+/* RESPONSIVE DESIGN */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
     .expense-tracker {
-        width: 95%;
+        width: 80%;
+        max-width: 350px;
         padding: 15px;
-    }
-    
-    input[type="text"], input[type="number"], input[type="date"] {
-        width: 100%;
     }
 
     table {
         font-size: 14px;
     }
-    
-    th, td {
-        padding: 6px;
-    }
-    
+
     button.add-expense-btn {
         font-size: 14px;
+        padding: 8px;
     }
 }
 
-/* For Tablets */
-@media (min-width: 601px) and (max-width: 1024px) {
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
     .expense-tracker {
-        width: 70%;
+        width: 95%;
+        max-width: 320px;
+        padding: 15px;
+    }
+
+    th, td {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    button.add-expense-btn {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    input[type="text"], 
+    input[type="number"], 
+    input[type="date"] {
+        width: 100%;
     }
 }
 
-/* For Large Screens */
-@media (min-width: 1025px) {
+/* Larger screens (Laptops and Desktops) */
+@media (min-width: 1024px) {
     .expense-tracker {
-        width: 50%;
+        max-width: 450px;
     }
 }
